@@ -1,22 +1,28 @@
-# kapil-validator Version V1
+# kapil-validator
 
-A simple validation package made using Node.js.
+A simple  validation package built using Node.js.
 
-## Features
+This package provides useful validation functions for checking:
 
-* Validate Email
-* Validate Indian Phone Number
-* Validate Name
+* Email validation
+* Indian phone number validation
+* Name validation
+
+More validation features and improvements will be added in future updates.
+
+---
 
 ## Installation
 
-```bash
+```bash id="8e5shy"
 npm install kapil-validator
 ```
 
+---
+
 ## Usage
 
-```js
+```js id="xw6x9m"
 const validator = require("kapil-validator");
 
 console.log(validator.isEmail("kapil@gmail.com"));
@@ -26,19 +32,93 @@ console.log(validator.isIndianPhone("9876543210"));
 console.log(validator.isName("Kapil"));
 ```
 
-## Functions
+---
 
-### isEmail()
+## Available Functions
 
-Checks whether email is valid or not.
+### isEmail(email)
 
-### isIndianPhone()
+Checks whether the given email format is valid or not.
 
-Checks whether Indian phone number is valid or not.
+#### Example
 
-### isName()
+```js id="7hh2om
+validator.isEmail("kapil@gmail.com");
+```
 
-Checks whether name is valid or not.
+Returns:
+
+```js id="zq7w5w"
+true
+```
+
+---
+
+### isIndianPhone(number)
+
+Checks whether the given phone number is a valid Indian mobile number.
+
+Validation includes:
+
+* Must contain 10 digits
+* Must start from 6, 7, 8, or 9
+
+#### Example
+
+```js id="y1ngsl"
+validator.isIndianPhone("9876543210");
+```
+
+Returns:
+
+```js id="tww6hr"
+true
+```
+
+---
+
+### isName(name)
+
+Checks whether the given name is valid.
+
+Validation includes:
+
+* Name should not be numeric
+* Minimum length should be greater than 1
+
+#### Example
+
+```js id="8pj0j0"
+validator.isName("Kapil");
+```
+
+Returns:
+
+```js id="i5jq3n"
+true
+```
+
+---
+
+## Future Updates
+
+More validations and improvements are coming soon, including:
+
+* Strong password validation
+* URL validation
+* Username validation
+* Empty string checks
+* Regex-based advanced validations
+* Better edge-case handling
+
+---
 
 ## Author
-kapil
+
+Kapil Gautam
+
+---
+
+## License
+
+MIT
